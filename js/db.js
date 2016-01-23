@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/social', function () {
+mongoose.connect('mongodb://127.0.0.1:27017/social', function () {
    console.log('mongodb connected')
 })
 
