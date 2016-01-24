@@ -1,32 +1,13 @@
-var express = require('express')
+var express    = require('express')
 var bodyParser = require('body-parser')
-var Post = require('./models/post')
+var logger     = require('morgan')
 
 //node ./js/server.js
-
-
 var app = express()
-
 app.use(bodyParser.json())
-app.post('/api/posts', function (req, res, next) {
-   var post = new Post({ username: req.body.username, body: req.body.body })
+app.use(logger('dev'))
+app.use(require('./controllers'))
 
-   post.save( function (err, post) {
-      if (err) { return next( err) }
-       res.json( 201, post)
-   })
-})
-
-app.get('/api/posts', function (req, res, next) {
-   Post.find( function( err, posts) {
-      if (err) {
-         return next( err)
-       }
-
-       res.json( posts)
-     })
-})
-
-app.listen( 3000, function () {
-    console.log(' Server listening on', 3000)
+var server = app.listen(3000, function () {
+  console.log('server listening on %d', server.address().port)
 })
