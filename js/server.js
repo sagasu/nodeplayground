@@ -17,9 +17,15 @@ app.post('/api/posts', function (req, res, next) {
    })
 })
 
-app.get('/api/posts', function (req, res) {
-   res.json([ { username: 'foo', body: 'bar' } ])
- })
+app.get('/api/posts', function (req, res, next) {
+   Post.find( function( err, posts) {
+      if (err) {
+         return next( err)
+       }
+
+       res.json( posts)
+     })
+})
 
 app.listen( 3000, function () {
     console.log(' Server listening on', 3000)
