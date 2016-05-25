@@ -4,6 +4,7 @@
   "description": "playground project for node",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.15.1",
     "express": "^4.13.3",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.15",
