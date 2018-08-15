@@ -1,6 +1,6 @@
-import {counter, increment} from "./counters"
+import {counter, increment} from "./counters";
 
-import {creature, inspect, reset} from "./creature.mjs"
+import {creature, inspect, reset} from "./creature.mjs";
 
 //console.log(counter += 1);
 //TypeError: Assignment to constant variable.
