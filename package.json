@@ -21,7 +21,8 @@
   "scripts": {
     "__start": "node index.js",
     "start": "node ./js/server.js",
-    "test": "karma start karma.conf.js"
+    "test": "karma start karma.conf.js",
+    "moduleScope": "node --experimental-modules languageFeatures/moduleScope.mjs"
   },
   "repository": {
     "type": "git",
