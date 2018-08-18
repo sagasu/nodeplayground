@@ -26,3 +26,8 @@ npm start
 ```
 npm test
 ```
+
+### Run code in languageFeatures folder
+```
+npm run moduleScope
+```
